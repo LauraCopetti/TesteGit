@@ -1,0 +1,691 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/LauraCopetti/TesteGit/blob/master/Mini_curso_python_semana_acad_2024\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Mini curso de Python\n"
+      ],
+      "metadata": {
+        "id": "O2-Jske_L4BQ"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Hello World\")\n",
+        "# https://ritzy-snow-c58.notion.site/Introdu-o-manipula-o-de-dados-com-Python-4f8044eeb0d64c9d8ecf5b6b68d07987"
+      ],
+      "metadata": {
+        "id": "JKnGX7kSLnxM",
+        "outputId": "171b2291-d9bd-40aa-d6ee-4fc376783bde",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 1,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Hello World\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "num = 5\n",
+        "string= \"palavra\"\n",
+        "#pode usar aspas simples ou duplas\n",
+        "print(num)\n",
+        "\n",
+        "\n",
+        "lista = {'mesa',10,35}\n",
+        "lista[1] #vai printar o elemento de índice 1\n",
+        "\n",
+        "lista[:] #vai imprimir a lista inteira\n",
+        "\n",
+        "lista[1:] #imprime do elemento com o indice indicado pra frente\n",
+        "\n",
+        "lista[:2] #pega ate o elemento de indice indicado\n",
+        "\n",
+        "lista[-1] #conta a posicao dos elementos da direita pra esquerda e imprime o elemento -1\n",
+        "#{-2,-1,0}\n",
+        "#[:] funciona tambem para esse caso\n",
+        "\n",
+        "lista[1:2] #imprime no intervalo indicado e a posicao da direita nao pega  pq eh intervalo aberto\n"
+      ],
+      "metadata": {
+        "id": "HjDQFjtdMfYK",
+        "outputId": "e93ed29f-d8ae-4d74-b02e-bdcd8d071943",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 2,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "5\n"
+          ]
+        },
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "{10, 35, 'mesa'}"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 2
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "a=5\n",
+        "b=5\n",
+        "\n",
+        "if a>b:\n",
+        "  print(a)\n",
+        "elif a<b:\n",
+        "  print(\"b é maior\")\n",
+        "else:\n",
+        "  print(\"iguais\")"
+      ],
+      "metadata": {
+        "id": "KL27ul4GOyuQ",
+        "outputId": "72a97ae1-bda0-45b9-f167-c092c1a34af3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "iguais\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#for\n",
+        "palavra = \"Python\"\n",
+        "for letra in palavra:\n",
+        "    print(letra, end=\"*\") #pode passar mais de um parametro no print\n",
+        "\n",
+        "#range(start, stop, step)\n",
+        "for i in range(1, 10):\n",
+        "    if i % 2 == 0:\n",
+        "       print(i)\n",
+        "\n",
+        "for i in range(0,15,5):\n",
+        "  print(i)\n",
+        "\n",
+        "for i in range(6, 1, -2):\n",
+        "  print(i, end=\" \")"
+      ],
+      "metadata": {
+        "collapsed": true,
+        "id": "7j_EEPN2PqUn",
+        "outputId": "074817f5-df21-4e1a-f3fd-ad1a46091131",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "P*y*t*h*o*n*2\n",
+            "4\n",
+            "6\n",
+            "8\n",
+            "0\n",
+            "5\n",
+            "10\n",
+            "6 4 2 "
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Antes de dicionario falar de for\n",
+        "dicionario = {\"Cat\": [\"Gato\",\"catinho\",9], #pode ser associado a uma lista tb\n",
+        "\t\t\t\t \"Fox\": \"Raposa\",\n",
+        "\t\t\t\t \"Spider\": \"Aranha\"}\n",
+        "\n",
+        "#acessar itens de um dicionário\n",
+        "for en, pt in dicionario.items():\n",
+        "\tprint(en, \"significa\", pt, \"em português\")\n",
+        "\n",
+        "for en in dicionario.keys(): #acessa so as chaves, pode usar dicionario.values() para acessar todos os valores\n",
+        "\tprint(en)\n",
+        "\n",
+        "for en in dicionario.values(): #acessa so as chaves, pode usar dicionario.values() para acessar todos os valores\n",
+        "\tprint(en)"
+      ],
+      "metadata": {
+        "id": "7HBZQRBhRrvK",
+        "outputId": "1bc1657c-0695-4fb0-c9e3-ef673a5e883d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 16,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Aranha\n",
+            "Aranha\n",
+            "Aranha\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Importação da biblioteca e 'apelido\n",
+        "import numpy as np\n",
+        "\n",
+        "# Array a partir de uma lista\n",
+        "array1 = np.array([1, 2, 3, 4, 5])\n",
+        "print(\"Array1:\\n\", array1)\n",
+        "\n",
+        "# Array de zeros\n",
+        "array2 = np.zeros((2, 3))\n",
+        "print(\"Array2 (zeros):\\n\", array2)\n",
+        "\n",
+        "# Array de uns\n",
+        "array3 = np.ones((3, 3))\n",
+        "print(\"Array3 (ones):\\n\", array3)\n",
+        "\n",
+        "# Array com uma sequência de números\n",
+        "array4 = np.arange(0, 10, 2)\n",
+        "print(\"Array4 (arange):\", array4)\n"
+      ],
+      "metadata": {
+        "id": "gAASDb5PTcYE",
+        "outputId": "baeff05f-3ed1-451c-92f2-aad748640b63",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 17,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Array1:\n",
+            " [1 2 3 4 5]\n",
+            "Array2 (zeros):\n",
+            " [[0. 0. 0.]\n",
+            " [0. 0. 0.]]\n",
+            "Array3 (ones):\n",
+            " [[1. 1. 1.]\n",
+            " [1. 1. 1.]\n",
+            " [1. 1. 1.]]\n",
+            "Array4 (arange): [0 2 4 6 8]\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Operações aritméticas\n",
+        "a = np.array([1, 2, 3])\n",
+        "b = np.array([4, 5, 6])\n",
+        "\n",
+        "print(\"Soma:\", a + b)\n",
+        "print(\"Subtração:\", a - b)\n",
+        "print(\"Multiplicação:\", a * b)\n",
+        "print(\"Divisão:\", a / b)\n"
+      ],
+      "metadata": {
+        "id": "HF8p-KSLVnkP"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "l1 = [1,2,3]\n",
+        "l2= [2,3,4]\n",
+        "\n",
+        "l1+l2 #concatena as listas"
+      ],
+      "metadata": {
+        "id": "OXNLQLZaVxAL",
+        "outputId": "68c9f4d0-dcf8-4150-89f5-1a18204593c6",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 18,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "[1, 2, 3, 2, 3, 4]"
+            ]
+          },
+          "metadata": {},
+          "execution_count": 18
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Importação da biblioteca e \"apelido\"\n",
+        "import pandas as pd\n",
+        "\n",
+        "# Criação de DataFrame com arrays\n",
+        "data = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])\n",
+        "df = pd.DataFrame(data, columns=['A', 'B', 'C'])\n",
+        "\n",
+        "print(\"DataFrame:\\n\", df)"
+      ],
+      "metadata": {
+        "id": "uTCozqYAY27Z",
+        "outputId": "ed822619-a420-4fda-d26d-cdf50ff27abd",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 19,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "DataFrame:\n",
+            "    A  B  C\n",
+            "0  1  2  3\n",
+            "1  4  5  6\n",
+            "2  7  8  9\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Criação a partir de dicionário\n",
+        "dicio = {\n",
+        "    'Nome': ['Ana', 'Bruno', 'Carla', 'Daniel', 'Eva',\n",
+        "    'Fernando', 'Gabriela', 'Henrique', 'Isabela', 'João'],\n",
+        "    'Idade': [28, 34, 25, 40, 30, 22, 27, 35, 29, 32],\n",
+        "    'Cidade': ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte',\n",
+        "    'Curitiba', 'Curitiba', 'Florianópolis', 'Curitiba', 'Salvador',\n",
+        "    'Salvador', 'Belo Horizonte']\n",
+        "}\n",
+        "\n",
+        "df_dict = pd.DataFrame(dicio)\n",
+        "print(df_dict)"
+      ],
+      "metadata": {
+        "id": "7Z_FZMqMZBY_",
+        "outputId": "c0f52488-de13-4ae7-e042-db47c98452e3",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 20,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "       Nome  Idade          Cidade\n",
+            "0       Ana     28       São Paulo\n",
+            "1     Bruno     34  Rio de Janeiro\n",
+            "2     Carla     25  Belo Horizonte\n",
+            "3    Daniel     40        Curitiba\n",
+            "4       Eva     30        Curitiba\n",
+            "5  Fernando     22   Florianópolis\n",
+            "6  Gabriela     27        Curitiba\n",
+            "7  Henrique     35        Salvador\n",
+            "8   Isabela     29        Salvador\n",
+            "9      João     32  Belo Horizonte\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from google.colab import drive\n",
+        "drive.mount(\"/content/drive\")\n",
+        "\n",
+        "#Atribuindo a uma variável\n",
+        "#Se estou lendo um excel tem q fazer read_excel // talvez seja outro nome, esta na documentacao do panda\n",
+        "dados = pd.read_csv(\"/content/drive/MyDrive/pasta_no_drive/arquivo.csv\")"
+      ],
+      "metadata": {
+        "id": "elwtAQHIZWhi"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "df = pd.read_csv('caminho/para/seu/arquivo.csv')\n",
+        "print(df.head())  # Mostra as primeiras 5 linhas do DataFrame\n",
+        "df.tail() #mostra as ultimas 5 linhas\n",
+        "df(10:32) #linha de a tal\n",
+        "\n",
+        "#escrita de um df para csv\n",
+        "df.to_csv('caminho/para/seu/arquivo_saida.csv', index=False)"
+      ],
+      "metadata": {
+        "id": "JsnKW-YHZyJE"
+      },
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#df_dict[['Nome','Idade']]\n",
+        "print(df_dict.loc[0])\n",
+        "#os : podem ser usados tb dentro dos colchetes\n",
+        "\n",
+        "#mostra so o nome que esta no indice 1\n",
+        "print(df_dict.loc[1,\"Nome\"])\n"
+      ],
+      "metadata": {
+        "id": "BWUloOY6cTaK",
+        "outputId": "b62742c6-e3a2-41bd-8c7e-95f1a0501e2d",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 30,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Nome            Ana\n",
+            "Idade            28\n",
+            "Cidade    São Paulo\n",
+            "Name: 0, dtype: object\n",
+            "Bruno\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Agrupando por cidade e calculando a média das idades\n",
+        "agrupado = df_dict.groupby('Cidade')['Idade'].mean()\n",
+        "print(agrupado)\n",
+        "\n",
+        "#Agrupando por cidade e mostando a idade maior\n",
+        "agrupado2 = df_dict.groupby('Cidade')['Idade'].max()\n",
+        "print(agrupado2)"
+      ],
+      "metadata": {
+        "id": "oojFQ6DkiqtB",
+        "outputId": "f7566f28-01c8-44e3-a600-4ec971974264",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 32,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Cidade\n",
+            "Belo Horizonte    28.500000\n",
+            "Curitiba          32.333333\n",
+            "Florianópolis     22.000000\n",
+            "Rio de Janeiro    34.000000\n",
+            "Salvador          32.000000\n",
+            "São Paulo         28.000000\n",
+            "Name: Idade, dtype: float64\n",
+            "Cidade\n",
+            "Belo Horizonte    32\n",
+            "Curitiba          40\n",
+            "Florianópolis     22\n",
+            "Rio de Janeiro    34\n",
+            "Salvador          35\n",
+            "São Paulo         28\n",
+            "Name: Idade, dtype: int64\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "#Concat\n",
+        "df1 = pd.DataFrame({'A': ['A0', 'A1', 'A2'], 'B': ['B0', 'B1', 'B2']})\n",
+        "df2 = pd.DataFrame({'A': ['A3', 'A4', 'A5'], 'B': ['B3', 'B4', 'B5']})\n",
+        "\n",
+        "\n",
+        "df_concatenado = pd.concat([df1, df2]) # padrão axis 0\n",
+        "print(df_concatenado)\n",
+        "\n",
+        "df_concatenado = pd.concat([df1, df2], axis=1)\n",
+        "print(df_concatenado)\n",
+        "\n",
+        "#Merge\n",
+        "df1 = pd.DataFrame({'key': ['A', 'B', 'C'], 'value': [1, 2, 3]})\n",
+        "df2 = pd.DataFrame({'key': ['A', 'B', 'D'], 'value': [4, 5, 6]})\n",
+        "\n",
+        "#passa os dataframes que quer q faça o merge\n",
+        "df_mesclado = pd.merge(df1, df2, on='key', how='inner')\n",
+        "print(df_mesclado)"
+      ],
+      "metadata": {
+        "id": "HUJqedQOioCU",
+        "outputId": "c7c80981-e0bf-447b-c0c3-f104b4ced561",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 35,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "    A   B\n",
+            "0  A0  B0\n",
+            "1  A1  B1\n",
+            "2  A2  B2\n",
+            "0  A3  B3\n",
+            "1  A4  B4\n",
+            "2  A5  B5\n",
+            "    A   B   A   B\n",
+            "0  A0  B0  A3  B3\n",
+            "1  A1  B1  A4  B4\n",
+            "2  A2  B2  A5  B5\n",
+            "  key  value_x  value_y\n",
+            "0   A        1        4\n",
+            "1   B        2        5\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Verificando valores ausentes\n",
+        "print(df.isnull())\n",
+        "\n",
+        "# Preenchendo valores ausentes com um valor específico\n",
+        "df_filled = df_dict.fillna(df_dict[\"Idade\"].mean())\n",
+        "#Número redondo\n",
+        "#df_filled = df_dict.fillna(round(df_dict[\"Idade\"].mean(), 0))\n",
+        "df_filled\n",
+        "\n",
+        "# Removendo linhas com valores ausentes\n",
+        "df_dropped = df_dict.dropna()\n",
+        "df_dropped\n",
+        "\n",
+        "#dicionario com valores vazios\n",
+        "dicio = {\n",
+        "    'Nome': ['Ana', 'Bruno', 'Carla', 'Daniel', 'Eva',\n",
+        "    'Fernando', 'Gabriela', 'Henrique', 'Isabela', 'João'],\n",
+        "    'Idade': [np.nan, 34, np.nan, 40, 30, 22, 27, 35, 29, 32],\n",
+        "    'Cidade': ['São Paulo', 'Rio de Janeiro', 'Belo Horizonte',\n",
+        "    'Curitiba', 'Curitiba', 'Florianópolis', 'Curitiba', 'Salvador',\n",
+        "    'Salvador', 'Belo Horizonte']\n",
+        "}\n",
+        "\n",
+        "df_dict = pd.DataFrame(dicio)\n",
+        "\n",
+        "# Criando uma nova coluna\n",
+        "df_dict['Ano_Nascimento'] = 2024 - df_dict['Idade'] #cria uma coluna para saber o ano q a pessoa nasceu\n",
+        "print(df_dict)\n",
+        "\n",
+        "# Renomeando colunas\n",
+        "df_renomeado = df_dict.rename(columns={'Nome': 'Nome_Completo', 'Idade': 'Idade_Atual'})\n",
+        "print(df_renomeado)\n",
+        "\n",
+        "#Removendo colunas\n",
+        "df = df_renomeado.drop(columns=['Nome_Completo'])\n"
+      ],
+      "metadata": {
+        "id": "yKUzAsgOlc4u",
+        "outputId": "bd7bd089-2823-4e87-8eff-b03e89a80170",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 36,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "       A      B      C\n",
+            "0  False  False  False\n",
+            "1  False  False  False\n",
+            "2  False  False  False\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# Teste"
+      ],
+      "metadata": {
+        "id": "6oyzYXZsmMJP"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import pandas as pd\n",
+        "\n",
+        "from google.colab import drive\n",
+        "drive.mount(\"/content/drive\",force_remount=True)\n",
+        "\n",
+        "#Atribuindo a uma variável\n",
+        "dados = pd.read_csv(\"/content/drive/MyDrive/curso/filmes_series.csv\")\n",
+        "\n",
+        "#print(dados.head())\n",
+        "#print(dados.tail())\n",
+        "#print(dados.info())\n",
+        "#print(dados.describe())\n",
+        "#print(dados.isnull())\n",
+        "print(dados.iloc[90:])"
+      ],
+      "metadata": {
+        "id": "_9GtYDfFmPvR",
+        "outputId": "229a3d13-15dc-4d97-f8ea-a11269aaafca",
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        }
+      },
+      "execution_count": 57,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Mounted at /content/drive\n",
+            "                                   Título   Tipo             Gênero  \\\n",
+            "90                                Aquaman  Série               Ação   \n",
+            "91                              Star Wars  Filme           Animação   \n",
+            "92                        The Mandalorian  Filme              Drama   \n",
+            "93                            Money Heist  Filme           Fantasia   \n",
+            "94                            The Witcher  Série           Fantasia   \n",
+            "95  The Lord of the Rings: The Two Towers  Filme             Terror   \n",
+            "96                        The Dark Knight  Série           Fantasia   \n",
+            "97                            WandaVision  Série  Ficção Científica   \n",
+            "98                        The Dark Knight  Série       Documentário   \n",
+            "99                        The Dark Knight  Filme               Ação   \n",
+            "\n",
+            "    Avaliação  Ingressos  \n",
+            "90          1     532345  \n",
+            "91          3     379805  \n",
+            "92          2     862271  \n",
+            "93          1     665981  \n",
+            "94          2     497738  \n",
+            "95          2     791483  \n",
+            "96          5     674229  \n",
+            "97          4     330019  \n",
+            "98          2     116331  \n",
+            "99          4     744331  \n"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "colab": {
+      "name": "Olá, este é o Colaboratory",
+      "toc_visible": true,
+      "provenance": [],
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 0
+}
